@@ -1,36 +1,67 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://2D3DSprite.tscn" type="PackedScene" id=1]
 [ext_resource path="res://2D3DAttachment.gd" type="Script" id=2]
 
-[sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0.162252, 0.529801, 0.913907 )
-colors = PoolColorArray( 0, 0.0392157, 1, 1, 0, 0.670588, 1, 1, 0, 1, 0.952941, 0 )
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.357988, 0.471893, 1 )
+colors = PoolColorArray( 0, 0.15625, 1, 1, 0, 0.953125, 1, 1, 0.905882, 0.996078, 1, 0.466667 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0.0052356, 1 )
+colors = PoolColorArray( 0, 1, 0.842441, 1, 0, 0.313809, 1, 1 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="ParticlesMaterial" id=1]
+trail_size_modifier = SubResource( 9 )
+trail_color_modifier = SubResource( 7 )
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 9.7
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+hue_variation = 0.05
+hue_variation_random = 0.21
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 520.121, 298.047 )
 
-[node name="2D3D-Sprite" parent="." instance=ExtResource( 1 )]
+[node name="Sprite2D3D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 64.872, 106.581 )
 scale = Vector2( 5.96875, 5.96875 )
 
-[node name="2D3DAttachment" type="Node2D" parent="2D3D-Sprite"]
+[node name="Attachment2D3D" type="Node2D" parent="Sprite2D3D"]
 script = ExtResource( 2 )
+bone_index = 5
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="2D3D-Sprite/2D3DAttachment"]
-position = Vector2( 35.2198, 4.69104 )
+[node name="CPUParticles2D" type="Particles2D" parent="Sprite2D3D/Attachment2D3D"]
+position = Vector2( 35.7868, 4.36706 )
 rotation = -1.5708
-amount = 30
+amount = 60
 lifetime = 4.64
 speed_scale = 4.1
 explosiveness = 0.08
 randomness = 1.0
 local_coords = false
-spread = 1.65
-gravity = Vector2( 0, 0 )
-initial_velocity = 0.3
-linear_accel = 3.22
-scale_amount = 6.37
-color_ramp = SubResource( 1 )
+process_material = SubResource( 1 )

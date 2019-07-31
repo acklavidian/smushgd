@@ -1,4 +1,4 @@
-extends Node2D
+class_name Sprite2D3D extends Node2D
 const Bone = Constants.Bone
 
 export var IS_DEBUG_SKELETON_OVERLAY: bool = false

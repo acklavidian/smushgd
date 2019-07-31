@@ -9,13 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Attachment2D3D",
+"language": "GDScript",
+"path": "res://2D3DAttachment.gd"
+}, {
 "base": "Reference",
 "class": "Constants",
 "language": "GDScript",
 "path": "res://Constants.gd"
+}, {
+"base": "Node2D",
+"class": "Sprite2D3D",
+"language": "GDScript",
+"path": "res://Sprite.gd"
 } ]
 _global_script_class_icons={
-"Constants": ""
+"Attachment2D3D": "",
+"Constants": "",
+"Sprite2D3D": ""
 }
 
 [application]
