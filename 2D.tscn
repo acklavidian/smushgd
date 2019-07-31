@@ -1,23 +1,36 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://2D3DSprite.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Eyes.gd" type="Script" id=2]
+[ext_resource path="res://2D3DAttachment.gd" type="Script" id=2]
 
-[sub_resource type="ViewportTexture" id=1]
-viewport_path = NodePath("Sprite/Viewport")
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.162252, 0.529801, 0.913907 )
+colors = PoolColorArray( 0, 0.0392157, 1, 1, 0, 0.670588, 1, 1, 0, 1, 0.952941, 0 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 520.121, 298.047 )
 
-[node name="Sprite" parent="." instance=ExtResource( 1 )]
-position = Vector2( 392.872, 258.581 )
-texture = SubResource( 1 )
-IS_DEBUG_SKELETON_OVERLAY = false
+[node name="2D3D-Sprite" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64.872, 106.581 )
+scale = Vector2( 5.96875, 5.96875 )
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Sprite"]
-position = Vector2( 34.7338, 5.01501 )
-local_coords = false
-gravity = Vector2( 0, 0 )
+[node name="2D3DAttachment" type="Node2D" parent="2D3D-Sprite"]
 script = ExtResource( 2 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="2D3D-Sprite/2D3DAttachment"]
+position = Vector2( 35.2198, 4.69104 )
+rotation = -1.5708
+amount = 30
+lifetime = 4.64
+speed_scale = 4.1
+explosiveness = 0.08
+randomness = 1.0
+local_coords = false
+spread = 1.65
+gravity = Vector2( 0, 0 )
+initial_velocity = 0.3
+linear_accel = 3.22
+scale_amount = 6.37
+color_ramp = SubResource( 1 )
