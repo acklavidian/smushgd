@@ -26,8 +26,7 @@ func _ready():
     CharacterAnimation.play('Running')
 
 func _process(delta):
-    update()
-    position.x += 7
+    if IS_DEBUG_SKELETON_OVERLAY: update()
 
 func _draw():
     if (IS_DEBUG_SKELETON_OVERLAY):

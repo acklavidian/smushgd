@@ -51,7 +51,6 @@ position = Vector2( 520.121, 298.047 )
 [node name="Sprite2D3D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 64.872, 106.581 )
 scale = Vector2( 5.96875, 5.96875 )
-IS_DEBUG_SKELETON_OVERLAY = true
 
 [node name="Attachment2D3D" type="Node2D" parent="Sprite2D3D"]
 editor/display_folded = true
