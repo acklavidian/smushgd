@@ -1,7 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Sprite.gd" type="Script" id=1]
+[ext_resource path="res://Sprite2D3D.gd" type="Script" id=1]
 [ext_resource path="res://CharacterViewport.tscn" type="PackedScene" id=2]
+
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")

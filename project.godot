@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Attachment2D3D",
 "language": "GDScript",
-"path": "res://2D3DAttachment.gd"
+"path": "res://Attachment2D3D.gd"
 }, {
 "base": "Reference",
 "class": "Constants",
@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Sprite2D3D",
 "language": "GDScript",
-"path": "res://Sprite.gd"
+"path": "res://Sprite2D3D.gd"
 } ]
 _global_script_class_icons={
 "Attachment2D3D": "",
