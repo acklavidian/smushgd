@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Brute.dae-1f983329323b6b555c79ab81e0fbb7a7.scn"
+path="res://.import/Brute.dae-4c86265b7ead666e649c3b67c4b63282.scn"
 
 [deps]
 
-source_file="res://Brute.dae"
-dest_files=[ "res://.import/Brute.dae-1f983329323b6b555c79ab81e0fbb7a7.scn" ]
+source_file="res://Resources/Brute.dae"
+dest_files=[ "res://.import/Brute.dae-4c86265b7ead666e649c3b67c4b63282.scn" ]
 
 [params]
 

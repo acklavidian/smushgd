@@ -12,17 +12,17 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Attachment2D3D",
 "language": "GDScript",
-"path": "res://Attachment2D3D.gd"
+"path": "res://Scripts/Attachment2D3D.gd"
 }, {
 "base": "Reference",
 "class": "Constants",
 "language": "GDScript",
-"path": "res://Constants.gd"
+"path": "res://Scripts/Constants.gd"
 }, {
-"base": "Node2D",
+"base": "Reference",
 "class": "Sprite2D3D",
 "language": "GDScript",
-"path": "res://Sprite2D3D.gd"
+"path": "res://Scripts/Sprite2D3D.gd"
 } ]
 _global_script_class_icons={
 "Attachment2D3D": "",
@@ -33,8 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="3D2D"
-run/main_scene="res://2D.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://Scenes/2D.tscn"
 
 [debug]
 
@@ -48,4 +47,4 @@ window/stretch/aspect="keep_height"
 [rendering]
 
 quality/2d/use_pixel_snap=true
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://Resources/default_env.tres"
