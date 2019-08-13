@@ -1,69 +1,35 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scenes/2D3DSprite.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/Attachment2D3D.gd" type="Script" id=2]
-
-[sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0.357988, 0.471893, 1 )
-colors = PoolColorArray( 0, 0.15625, 1, 1, 0, 0.953125, 1, 1, 0.905882, 0.996078, 1, 0.466667 )
-
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
-
-[sub_resource type="Curve" id=3]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=4]
-curve = SubResource( 3 )
-
-[sub_resource type="Gradient" id=5]
-offsets = PoolRealArray( 0.0052356, 1 )
-colors = PoolColorArray( 0, 1, 0.842441, 1, 0, 0.313809, 1, 1 )
-
-[sub_resource type="GradientTexture" id=6]
-gradient = SubResource( 5 )
-
-[sub_resource type="Curve" id=7]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=8]
-curve = SubResource( 7 )
-
-[sub_resource type="ParticlesMaterial" id=9]
-trail_size_modifier = SubResource( 8 )
-trail_color_modifier = SubResource( 6 )
-flag_disable_z = true
-gravity = Vector3( 0, 0, 0 )
-angular_velocity = 1.59748e-43
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 9.7
-scale_curve = SubResource( 4 )
-color_ramp = SubResource( 2 )
-hue_variation = 0.05
-hue_variation_random = 0.21
+[ext_resource path="res://addons/Smushgd/Smushgd_node.gd" type="Script" id=1]
+[ext_resource path="res://addons/Smushgd/Icon2D3D.svg" type="Texture" id=2]
+[ext_resource path="res://addons/Smushgd/Attachment2D3D.gd" type="Script" id=3]
+[ext_resource path="res://addons/Smushgd/Icon2D3DAttachment.svg" type="Texture" id=4]
+[ext_resource path="res://addons/Smushgd/Icon2D3D.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Brute.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 520.121, 298.047 )
 
-[node name="Sprite2D3D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 64.872, 106.581 )
-scale = Vector2( 5.96875, 5.96875 )
+[node name="Smushgd" type="Node2D" parent="."]
+position = Vector2( 247.861, 133.891 )
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+resolution = Vector2( 64, 64 )
 
-[node name="Attachment2D3D" type="Node2D" parent="Sprite2D3D"]
-editor/display_folded = true
-script = ExtResource( 2 )
-bone_index = 5
+[node name="Smushgd Attachment" type="Node2D" parent="Smushgd"]
+position = Vector2( -52.8151, 14.8253 )
+script = ExtResource( 3 )
+__meta__ = {
+"_editor_icon": ExtResource( 4 )
+}
+bone_index = 26
 
-[node name="CPUParticles2D" type="Particles2D" parent="Sprite2D3D/Attachment2D3D"]
-position = Vector2( 35.7868, 4.36706 )
-rotation = -1.5708
-amount = 60
-lifetime = 4.64
-speed_scale = 4.1
-explosiveness = 0.08
-randomness = 1.0
-local_coords = false
-process_material = SubResource( 9 )
+[node name="Sprite" type="Sprite" parent="Smushgd/Smushgd Attachment"]
+position = Vector2( 87.7037, 18.0381 )
+texture = ExtResource( 5 )
+
+[node name="Scene Root" parent="Smushgd" instance=ExtResource( 6 )]

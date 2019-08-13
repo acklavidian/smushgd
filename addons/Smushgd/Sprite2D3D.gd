@@ -1,4 +1,4 @@
-class_name Sprite2D3D extends Node2D
+extends Node2D
 const Bone = Constants.Bone
 
 export var IS_DEBUG_SKELETON_OVERLAY: bool = false
@@ -7,23 +7,23 @@ const RIGHT_ARM = [Bone.RIGHT_SHOULDER, Bone.RIGHT_UPPERARM, Bone.RIGHT_FOREARM,
 const SPINE = [Bone.HEAD, Bone.TORSO, Bone.HIPS, Bone.LEFT_FOOT]
 
 onready var CharacterViewport: Viewport = get_node('Viewport')
-onready var CharacterAnimation: AnimationPlayer = CharacterViewport.get_node('Brute/AnimationPlayer')
-onready var CharacterSkeleton: Skeleton = CharacterViewport.get_node('Brute/Armature/Skeleton')
+onready var CharacterAnimation: AnimationPlayer = CharacterViewport.get_node('Scene Root/AnimationPlayer')
+onready var CharacterSkeleton: Skeleton = CharacterViewport.get_node('Scene Root/Armature/Skeleton')
 onready var CharacterCamera: Camera = CharacterViewport.get_node('Camera')
-onready var CharacterBones: Dictionary = {
-    Bone.HEAD: CharacterSkeleton.get_node("HeadAttachment"),
-    Bone.HIPS: CharacterSkeleton.get_node('HipsAttachment'),
-    Bone.LEFT_FOOT: CharacterSkeleton.get_node('LeftFootAttachment'),
-    Bone.RIGHT_FOOT: CharacterSkeleton.get_node('RightFootAttachment'),
-    Bone.RIGHT_HAND: CharacterSkeleton.get_node('RightHandtAttachment'),
-    Bone.LEFT_HAND: CharacterSkeleton.get_node('LeftHandAttachment')
-}
+#onready var CharacterBones: Dictionary = {
+#    Bone.HEAD: CharacterSkeleton.get_node("HeadAttachment"),
+#    Bone.HIPS: CharacterSkeleton.get_node('HipsAttachment'),
+#    Bone.LEFT_FOOT: CharacterSkeleton.get_node('LeftFootAttachment'),
+#    Bone.RIGHT_FOOT: CharacterSkeleton.get_node('RightFootAttachment'),
+#    Bone.RIGHT_HAND: CharacterSkeleton.get_node('RightHandtAttachment'),
+#    Bone.LEFT_HAND: CharacterSkeleton.get_node('LeftHandAttachment')
+#}
 
 onready var bone_positions: Array = []
 
-func _ready():
-    pass
-    CharacterAnimation.play('Running')
+#func _ready():
+#	print(CharacterViewport.get_children()[1].name)
+#	CharacterAnimation.play('Running')
 
 func _process(delta):
     if IS_DEBUG_SKELETON_OVERLAY: update()

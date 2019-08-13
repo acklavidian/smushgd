@@ -9,25 +9,13 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
-"class": "Attachment2D3D",
-"language": "GDScript",
-"path": "res://Scripts/Attachment2D3D.gd"
-}, {
 "base": "Reference",
 "class": "Constants",
 "language": "GDScript",
-"path": "res://Scripts/Constants.gd"
-}, {
-"base": "Reference",
-"class": "Sprite2D3D",
-"language": "GDScript",
-"path": "res://Scripts/Sprite2D3D.gd"
+"path": "res://addons/Smushgd/Constants.gd"
 } ]
 _global_script_class_icons={
-"Attachment2D3D": "",
-"Constants": "",
-"Sprite2D3D": ""
+"Constants": ""
 }
 
 [application]
@@ -43,6 +31,10 @@ settings/stdout/print_fps=true
 
 window/stretch/mode="2d"
 window/stretch/aspect="keep_height"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "Smushgd" )
 
 [rendering]
 
