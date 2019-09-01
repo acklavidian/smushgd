@@ -50,7 +50,14 @@ func get_3Dbone_2Dcoord(bone_id: int):
     var global_origin = CharacterSkeleton.to_global(CharacterSkeleton.get_bone_global_pose(bone_id).origin)
     return CharacterCamera.unproject_position(global_origin)
 
-func move_node2D_to_bone(node, bone, offset: Vector2 = Vector2(0,0)):
+func get_3Dbone_2Drotation(bone_id: int):
+    var rotation = CharacterSkeleton.get_bone_global_pose(bone_id).basis.get_euler()
+    return rotation.x * -1
+
+func rotate_node2D_to_bone(node, bone, offset: int = 0):
+    node.rotation = get_3Dbone_2Drotation(bone) - offset
+    
+func move_node2D_to_bone(node, bone, offset: Vector2 = Vector2.ZERO):
     node.position = get_3Dbone_2Dcoord(bone) + offset
     
     

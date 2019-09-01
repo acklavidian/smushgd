@@ -21,15 +21,19 @@ __meta__ = {
 resolution = Vector2( 64, 64 )
 
 [node name="Smushgd Attachment" type="Node2D" parent="Smushgd"]
-position = Vector2( -52.8151, 14.8253 )
+rotation = 0.00242491
 script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
-bone_index = 26
+bone_index = 46
+use_rotation = true
+use_rot_offset = true
 
 [node name="Sprite" type="Sprite" parent="Smushgd/Smushgd Attachment"]
-position = Vector2( 87.7037, 18.0381 )
+position = Vector2( 78.216, 46.0887 )
+rotation = 3.21482
+scale = Vector2( -3.84681, 0.53634 )
 texture = ExtResource( 5 )
 
 [node name="Scene Root" parent="Smushgd" instance=ExtResource( 6 )]
