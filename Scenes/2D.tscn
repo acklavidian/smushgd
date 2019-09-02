@@ -2,10 +2,10 @@
 
 [ext_resource path="res://addons/Smushgd/Smushgd_node.gd" type="Script" id=1]
 [ext_resource path="res://addons/Smushgd/Icon2D3D.svg" type="Texture" id=2]
-[ext_resource path="res://addons/Smushgd/Attachment2D3D.gd" type="Script" id=3]
-[ext_resource path="res://addons/Smushgd/Icon2D3DAttachment.svg" type="Texture" id=4]
-[ext_resource path="res://addons/Smushgd/Icon2D3D.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Brute.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Brute.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/Smushgd/Attachment2D3D.gd" type="Script" id=4]
+[ext_resource path="res://addons/Smushgd/Icon2D3DAttachment.svg" type="Texture" id=5]
+[ext_resource path="res://addons/Smushgd/Icon2D3D.png" type="Texture" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -20,20 +20,21 @@ __meta__ = {
 }
 resolution = Vector2( 64, 64 )
 
+[node name="Scene Root" parent="Smushgd" instance=ExtResource( 3 )]
+
 [node name="Smushgd Attachment" type="Node2D" parent="Smushgd"]
+editor/display_folded = true
 rotation = 0.00242491
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 __meta__ = {
-"_editor_icon": ExtResource( 4 )
+"_editor_icon": ExtResource( 5 )
 }
-bone_index = 46
+bone_index = 24
 use_rotation = true
 use_rot_offset = true
 
 [node name="Sprite" type="Sprite" parent="Smushgd/Smushgd Attachment"]
-position = Vector2( 78.216, 46.0887 )
-rotation = 3.21482
+position = Vector2( 32.658, 32.0281 )
+rotation = -7.7936
 scale = Vector2( -3.84681, 0.53634 )
-texture = ExtResource( 5 )
-
-[node name="Scene Root" parent="Smushgd" instance=ExtResource( 6 )]
+texture = ExtResource( 6 )

@@ -6,8 +6,8 @@ export(bool) var use_pos_offset = false
 const is_smushgd_attachment: bool = true
 var pos_offsets: Array = []
 var rot_offsets: Array = []
-onready var smushgd_node: Node2D = get_node('../Smushgd Node')
-onready var animation_player: AnimationPlayer = get_node('../Smushgd Node/Viewport/Scene Root/AnimationPlayer')
+onready var smushgd_node: Node2D = get_node('../../../Smushgd Node')
+onready var animation_player: AnimationPlayer = get_node('../../../Smushgd Node/Viewport/Scene Root/AnimationPlayer')
 
 func _ready():
     smushgd_node.connect('ready', self, 'update_attachments')
@@ -26,5 +26,4 @@ func update_attachments():
         var bone_pos = smushgd_node.get_3Dbone_2Dcoord(bone_index)
         var bone_rot = smushgd_node.get_3Dbone_2Drotation(bone_index)
         pos_offsets.push_back(child.position - bone_pos)
-        print(bone_rot, ' : ', child.transform.get_rotation())
-        rot_offsets.push_back(child.transform.get_rotation())
+        rot_offsets.push_back(child.rotation)

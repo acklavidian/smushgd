@@ -3,11 +3,13 @@ extends Node2D
 export var IS_DEBUG_SKELETON_OVERLAY: bool = false
 export var resolution: Vector2 = Vector2(0,0)
 var sprite2D3D
+var sprite
 func _enter_tree():
     # Initialization of the plugin goes here
     sprite2D3D = preload('res://addons/Smushgd/Scenes/2D3DSprite.tscn').instance()
     sprite2D3D.IS_DEBUG_SKELETON_OVERLAY = IS_DEBUG_SKELETON_OVERLAY
     var viewport = sprite2D3D.get_node('Viewport')
+    sprite = sprite2D3D.get_node('Sprite')
     viewport.size = resolution
     inject3D()
     add_child(sprite2D3D)
@@ -31,9 +33,8 @@ func injectAttachments():
     var children = get_children()
     for child in children:
         if child.get('is_smushgd_attachment'):
-            var duplicate_child = child.duplicate()
-            duplicate_child.smushgd_node = sprite2D3D
-            sprite2D3D.add_child(sprite2D3D)
+            remove_child(child)
+            sprite.add_child(child)
             
 func _exit_tree():
     # Clean-up of the plugin goes here
