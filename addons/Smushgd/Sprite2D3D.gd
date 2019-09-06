@@ -2,6 +2,7 @@ extends Node2D
 const Bone = Constants.Bone
 
 export var IS_DEBUG_SKELETON_OVERLAY: bool = false
+export var CAST_SHADOW: bool = false
 const LEFT_ARM = [Bone.LEFT_SHOULDER, Bone.LEFT_UPPERARM, Bone.LEFT_FOREARM, Bone.LEFT_HAND]
 const RIGHT_ARM = [Bone.RIGHT_SHOULDER, Bone.RIGHT_UPPERARM, Bone.RIGHT_FOREARM, Bone.RIGHT_HAND]
 const SPINE = [Bone.HEAD, Bone.TORSO, Bone.HIPS, Bone.LEFT_FOOT]
@@ -30,6 +31,8 @@ func _process(delta):
 func _draw():
     if (IS_DEBUG_SKELETON_OVERLAY):
         debug_skeleton_overlay()
+    if (CAST_SHADOW):
+        inject_occlution()
         
 func debug_skeleton_overlay():
     overlay_polyline(CharacterSkeleton.get_bone_count())
@@ -39,11 +42,8 @@ func overlay_circle(bone_id, color: Color = Color.red):
     draw_circle(point, 3, color)
     
 func overlay_polyline(bone_ids, color: Color = Color.red):
-    var bone_poses = []
-    for bone_id in bone_ids:
-        var point = get_3Dbone_2Dcoord(bone_id)
-        bone_poses.push_back(point)
-    draw_polyline(bone_poses, color, 2)
+    var pose_segment = skeleton_pose_segment() 
+    draw_polyline(pose_segment, color, 2)
     
 func get_3Dbone_2Dcoord(bone_id: int):
     var global_origin = CharacterSkeleton.to_global(CharacterSkeleton.get_bone_global_pose(bone_id).origin)
@@ -60,5 +60,18 @@ func rotate_node2D_to_bone(node: Node2D, bone, offset: float = 0):
 func move_node2D_to_bone(node, bone, offset: Vector2 = Vector2.ZERO):
     node.position = get_3Dbone_2Dcoord(bone) + offset
 
+func skeleton_pose_segment():
+    var bone_poses = []
+    for bone_id in CharacterSkeleton.get_bone_count():
+        var point = get_3Dbone_2Dcoord(bone_id)
+        bone_poses.push_back(point)
+    return bone_poses
+
+func inject_occlution():
+    var pose_segment: Array = skeleton_pose_segment()
+    var light_occluder: LightOccluder2D = LightOccluder2D.new()
+    light_occluder.occluder = OccluderPolygon2D.new()
+    light_occluder.occluder.polygon = pose_segment
+    add_child(light_occluder)
     
     

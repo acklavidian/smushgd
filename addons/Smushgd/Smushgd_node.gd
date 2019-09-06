@@ -1,6 +1,7 @@
 tool
 extends Node2D
 export var IS_DEBUG_SKELETON_OVERLAY: bool = false
+export var CAST_SHADOW: bool = false
 export var resolution: Vector2 = Vector2(0,0)
 var sprite2D3D
 var sprite
@@ -8,6 +9,7 @@ func _enter_tree():
     # Initialization of the plugin goes here
     sprite2D3D = preload('res://addons/Smushgd/Scenes/2D3DSprite.tscn').instance()
     sprite2D3D.IS_DEBUG_SKELETON_OVERLAY = IS_DEBUG_SKELETON_OVERLAY
+    sprite2D3D.CAST_SHADOW = CAST_SHADOW
     var viewport = sprite2D3D.get_node('Viewport')
     sprite = sprite2D3D.get_node('Sprite')
     viewport.size = resolution
