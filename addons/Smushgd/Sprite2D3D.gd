@@ -12,6 +12,8 @@ onready var CharacterAnimation: AnimationPlayer = CharacterViewport.get_node('Sc
 onready var CharacterSkeleton: Skeleton = CharacterViewport.get_node('Scene Root/Armature/Skeleton')
 onready var CharacterCamera: Camera = CharacterViewport.get_node('Camera')
 onready var CharacterSprite: Sprite = get_node('Sprite')
+onready var light_occluder: LightOccluder2D = LightOccluder2D.new()
+
 #onready var CharacterBones: Dictionary = {
 #    Bone.HEAD: CharacterSkeleton.get_node("HeadAttachment"),
 #    Bone.HIPS: CharacterSkeleton.get_node('HipsAttachment'),
@@ -23,7 +25,14 @@ onready var CharacterSprite: Sprite = get_node('Sprite')
 
 onready var bone_positions: Array = []
 
+func _ready(): 
+     if CAST_SHADOW:
+        light_occluder.occluder = OccluderPolygon2D.new()
+        add_child(light_occluder)
+
 func _process(delta):
+    if CAST_SHADOW:
+        inject_occlution()
     if IS_DEBUG_SKELETON_OVERLAY: 
         modulate = Color(1, 1, 1, 0.3)
         update()
@@ -31,8 +40,7 @@ func _process(delta):
 func _draw():
     if (IS_DEBUG_SKELETON_OVERLAY):
         debug_skeleton_overlay()
-    if (CAST_SHADOW):
-        inject_occlution()
+
         
 func debug_skeleton_overlay():
     overlay_polyline(CharacterSkeleton.get_bone_count())
@@ -69,9 +77,7 @@ func skeleton_pose_segment():
 
 func inject_occlution():
     var pose_segment: Array = skeleton_pose_segment()
-    var light_occluder: LightOccluder2D = LightOccluder2D.new()
-    light_occluder.occluder = OccluderPolygon2D.new()
     light_occluder.occluder.polygon = pose_segment
-    add_child(light_occluder)
+    
     
     

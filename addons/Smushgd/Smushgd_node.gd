@@ -35,6 +35,7 @@ func injectAttachments():
         if child.get('is_smushgd_attachment'):
             var dup = child.duplicate()
             dup.smushgd_node = sprite2D3D
+            child.visible = false
             sprite.add_child(dup)
             
 func _exit_tree():

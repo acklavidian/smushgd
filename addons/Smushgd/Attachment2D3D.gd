@@ -6,6 +6,7 @@ export(bool) var use_pos_offset = false
 const is_smushgd_attachment: bool = true
 var pos_offsets: Array = []
 var rot_offsets: Array = []
+
 onready var smushgd_node: Node2D = get_node('../Smushgd Node') if smushgd_node == null else smushgd_node
 onready var animation_player: AnimationPlayer = smushgd_node.get_node('Viewport/Scene Root/AnimationPlayer')
 
