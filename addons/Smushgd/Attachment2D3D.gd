@@ -6,10 +6,11 @@ export(bool) var use_pos_offset = false
 const is_smushgd_attachment: bool = true
 var pos_offsets: Array = []
 var rot_offsets: Array = []
-onready var smushgd_node: Node2D = get_node('../../../Smushgd Node')
-onready var animation_player: AnimationPlayer = get_node('../../../Smushgd Node/Viewport/Scene Root/AnimationPlayer')
+onready var smushgd_node: Node2D = get_node('../Smushgd Node') if smushgd_node == null else smushgd_node
+onready var animation_player: AnimationPlayer = smushgd_node.get_node('Viewport/Scene Root/AnimationPlayer')
 
 func _ready():
+    print(get_path())
     smushgd_node.connect('ready', self, 'update_attachments')
     animation_player.connect('animation_started', self, 'update_attachments')
 

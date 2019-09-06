@@ -23,7 +23,6 @@ resolution = Vector2( 64, 64 )
 [node name="Scene Root" parent="Smushgd" instance=ExtResource( 3 )]
 
 [node name="Smushgd Attachment" type="Node2D" parent="Smushgd"]
-editor/display_folded = true
 rotation = 0.00242491
 script = ExtResource( 4 )
 __meta__ = {

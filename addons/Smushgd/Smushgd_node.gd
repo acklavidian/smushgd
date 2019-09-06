@@ -33,8 +33,9 @@ func injectAttachments():
     var children = get_children()
     for child in children:
         if child.get('is_smushgd_attachment'):
-            remove_child(child)
-            sprite.add_child(child)
+            var dup = child.duplicate()
+            dup.smushgd_node = sprite2D3D
+            sprite.add_child(dup)
             
 func _exit_tree():
     # Clean-up of the plugin goes here
