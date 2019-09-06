@@ -10,6 +10,7 @@ onready var CharacterViewport: Viewport = get_node('Viewport')
 onready var CharacterAnimation: AnimationPlayer = CharacterViewport.get_node('Scene Root/AnimationPlayer')
 onready var CharacterSkeleton: Skeleton = CharacterViewport.get_node('Scene Root/Armature/Skeleton')
 onready var CharacterCamera: Camera = CharacterViewport.get_node('Camera')
+onready var CharacterSprite: Sprite = get_node('Sprite')
 #onready var CharacterBones: Dictionary = {
 #    Bone.HEAD: CharacterSkeleton.get_node("HeadAttachment"),
 #    Bone.HIPS: CharacterSkeleton.get_node('HipsAttachment'),
@@ -22,7 +23,9 @@ onready var CharacterCamera: Camera = CharacterViewport.get_node('Camera')
 onready var bone_positions: Array = []
 
 func _process(delta):
-    if IS_DEBUG_SKELETON_OVERLAY: update()
+    if IS_DEBUG_SKELETON_OVERLAY: 
+        modulate = Color(1, 1, 1, 0.3)
+        update()
 
 func _draw():
     if (IS_DEBUG_SKELETON_OVERLAY):
@@ -56,6 +59,6 @@ func rotate_node2D_to_bone(node: Node2D, bone, offset: float = 0):
     
 func move_node2D_to_bone(node, bone, offset: Vector2 = Vector2.ZERO):
     node.position = get_3Dbone_2Dcoord(bone) + offset
-    
+
     
     

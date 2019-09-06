@@ -10,7 +10,6 @@ onready var smushgd_node: Node2D = get_node('../Smushgd Node') if smushgd_node =
 onready var animation_player: AnimationPlayer = smushgd_node.get_node('Viewport/Scene Root/AnimationPlayer')
 
 func _ready():
-    print(get_path())
     smushgd_node.connect('ready', self, 'update_attachments')
     animation_player.connect('animation_started', self, 'update_attachments')
 
@@ -22,8 +21,7 @@ func _process(delta):
         if use_rotation: smushgd_node.rotate_node2D_to_bone(child, bone_index, rot_offsets[child_index] if use_rot_offset else 0)
         
 func update_attachments():
-    for child_index in get_child_count():
-        var child = get_child(child_index)
+    for child in get_children():
         var bone_pos = smushgd_node.get_3Dbone_2Dcoord(bone_index)
         var bone_rot = smushgd_node.get_3Dbone_2Drotation(bone_index)
         pos_offsets.push_back(child.position - bone_pos)

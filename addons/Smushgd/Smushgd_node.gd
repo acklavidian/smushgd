@@ -24,14 +24,12 @@ func _process(delta):
             
 func inject3D():
     var viewport = sprite2D3D.get_node('Viewport')
-    var children = get_children()
-    for child in children:
+    for child in get_children():
         if child.get_class() == 'Spatial':
             viewport.add_child(child.duplicate())
             
 func injectAttachments():
-    var children = get_children()
-    for child in children:
+    for child in get_children():
         if child.get('is_smushgd_attachment'):
             var dup = child.duplicate()
             dup.smushgd_node = sprite2D3D
