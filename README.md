@@ -1,3 +1,4 @@
+![](https://gitlab.com/uploads/-/system/project/avatar/13577583/icon-large.png)
 # Smushgd
 
 ## Description
