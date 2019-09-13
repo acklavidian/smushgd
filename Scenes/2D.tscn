@@ -38,6 +38,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
+IS_DEBUG_SKELETON_OVERLAY = false
 CAST_SHADOW = true
 resolution = Vector2( 64, 64 )
 
