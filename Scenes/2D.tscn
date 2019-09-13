@@ -33,7 +33,7 @@ texture = ExtResource( 2 )
 position = Vector2( 520.121, 298.047 )
 
 [node name="Smushgd" type="Node2D" parent="."]
-position = Vector2( 247.861, 134.748 )
+position = Vector2( 147.757, 187.099 )
 script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
@@ -44,14 +44,13 @@ resolution = Vector2( 64, 64 )
 [node name="Scene Root" parent="Smushgd" instance=ExtResource( 5 )]
 
 [node name="Smushgd Attachment" type="Node2D" parent="Smushgd"]
+editor/display_folded = true
 script = ExtResource( 6 )
 __meta__ = {
 "_editor_icon": ExtResource( 7 )
 }
 bone_index = 26
-use_rotation = true
-use_rot_offset = true
 
 [node name="Sprite" type="Sprite" parent="Smushgd/Smushgd Attachment"]
-position = Vector2( 30.0081, 31.7229 )
+position = Vector2( 114.031, 7.71638 )
 texture = ExtResource( 8 )

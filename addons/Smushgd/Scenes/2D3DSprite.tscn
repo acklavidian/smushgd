@@ -1,9 +1,41 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://addons/Smushgd/Sprite2D3D.gd" type="Script" id=1]
 [ext_resource path="res://addons/Smushgd/Scenes/CharacterViewport.tscn" type="PackedScene" id=2]
 
-[sub_resource type="ViewportTexture" id=1]
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform float outLineSize  = 0.02;
+uniform vec4  outLineColor = vec4(1.0, 1.0, 1.0, 1.0);
+
+void fragment()
+{
+    vec4 tcol = texture(TEXTURE, UV);
+    
+    if (tcol.a == 0.0)
+    {
+        if (texture(TEXTURE, UV + vec2(0.0,          outLineSize)).a  != 0.0 ||
+            texture(TEXTURE, UV + vec2(0.0,         -outLineSize)).a  != 0.0 ||
+            texture(TEXTURE, UV + vec2(outLineSize,  0.0)).a          != 0.0 ||
+            texture(TEXTURE, UV + vec2(-outLineSize, 0.0)).a          != 0.0 ||
+            texture(TEXTURE, UV + vec2(-outLineSize, outLineSize)).a  != 0.0 ||
+            texture(TEXTURE, UV + vec2(-outLineSize, -outLineSize)).a != 0.0 ||
+            texture(TEXTURE, UV + vec2(outLineSize,  outLineSize)).a  != 0.0 ||
+            texture(TEXTURE, UV + vec2(outLineSize,  -outLineSize)).a != 0.0) 
+            tcol = outLineColor;
+    }
+    
+    COLOR = tcol;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/outLineSize = 0.02
+shader_param/outLineColor = Plane( 0, 0, 0, 1 )
+
+[sub_resource type="ViewportTexture" id=3]
 viewport_path = NodePath("Viewport")
 
 [node name="Smushgd Node" type="Node2D"]
@@ -15,6 +47,7 @@ transparent_bg = true
 [node name="Sprite" type="Sprite" parent="." groups=[
 "Character",
 ]]
-texture = SubResource( 1 )
+material = SubResource( 2 )
+texture = SubResource( 3 )
 centered = false
 flip_v = true
