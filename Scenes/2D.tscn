@@ -33,7 +33,7 @@ texture = ExtResource( 2 )
 position = Vector2( 520.121, 298.047 )
 
 [node name="Smushgd" type="Node2D" parent="."]
-position = Vector2( 147.757, 187.099 )
+position = Vector2( 236.742, 204.122 )
 script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
