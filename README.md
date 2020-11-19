@@ -1,9 +1,10 @@
-![smushed-icon](addons/Smushgd/icon-big.png)
-# Smushgd
+# ![Smushgd](addons/Smushgd/icon-big.png)
 
 ## Description
 Smushgd is a plugin for the Godot game engine. Smushgd tries to ease the use of 3D models in a 2D context. Specifically, 3D models with skeletal animations. This plugin attempts to visually "smush" them down in to a 2D sprite without losing the skeletal information.
+
 ![preview](addons/Smushgd/smushgd_run.gif)
+![preview bones](addons/Smushgd/smushgd_run_bones.gif)
 
 ## Usage
 The Smushgd plugin will add 2 nodes to Godot. The "Smushgd" node and the "Smushgd Attachment" node. 
