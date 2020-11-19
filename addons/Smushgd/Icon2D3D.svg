@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -11,11 +9,14 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg815"
-   width="16"
-   height="16"
-   viewBox="0 0 16 16"
+   width="64"
+   height="64"
+   viewBox="0 0 64 64"
    sodipodi:docname="Icon2D3D.svg"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   inkscape:export-filename="/home/eddie/Projects/smushgd/addons/Smushgd/icon-big.png"
+   inkscape:export-xdpi="250.22646"
+   inkscape:export-ydpi="250.22646">
   <metadata
      id="metadata821">
     <rdf:RDF>
@@ -24,20 +25,12 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs819">
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 8 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="16 : 8 : 1"
-       inkscape:persp3d-origin="8 : 5.3333333 : 1"
-       id="perspective850" />
-  </defs>
+     id="defs819" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -47,17 +40,18 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1850"
+     inkscape:window-width="1920"
      inkscape:window-height="1016"
      id="namedview817"
      showgrid="false"
-     inkscape:zoom="18.473165"
-     inkscape:cx="1.6604038"
-     inkscape:cy="12.988336"
-     inkscape:window-x="70"
+     inkscape:zoom="4.6182913"
+     inkscape:cx="-36.653621"
+     inkscape:cy="21.4598"
+     inkscape:window-x="1920"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g852" />
+     inkscape:current-layer="g852"
+     inkscape:document-rotation="0" />
   <circle
      style="opacity:1;fill:none;fill-opacity:1;stroke:#00f8ff;stroke-opacity:1"
      id="path847"
@@ -68,24 +62,34 @@
      id="g852"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#00f8ff;stroke-opacity:1">
     <path
-       d="m 1.9094612,6.1136205 v 3.708918 L 6.6956853,9.2034651 V 6.7543792 Z"
-       style="fill:#353564;fill-rule:evenodd;stroke:none;stroke-linejoin:round"
-       id="path866" />
+       d="M 12.209109,24.931991 V 39.242426 L 30.676205,36.853802 V 27.404285 Z"
+       style="fill:#353564;fill-rule:evenodd;stroke:none;stroke-width:3.85839;stroke-linejoin:round;stroke-opacity:1"
+       id="path866"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
-       d="M 1.9094612,9.8225385 8.1493597,15.778384 13.543173,10.434215 6.6956853,9.2034651 Z"
-       style="fill:#afafde;fill-rule:evenodd;stroke:none;stroke-linejoin:round"
-       id="path868" />
+       d="M 12.209109,39.242426 36.28504,62.222373 57.096451,41.602508 30.676205,36.853802 Z"
+       style="fill:#afafde;fill-rule:evenodd;stroke:none;stroke-width:3.85839;stroke-linejoin:round;stroke-opacity:1"
+       id="path868"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
-       d="M 6.6956853,6.7543792 13.543173,5.4805181 V 10.434215 L 6.6956853,9.2034651 Z"
-       style="fill:#e9e9ff;fill-rule:evenodd;stroke:none;stroke-linejoin:round"
-       id="path870" />
+       d="m 30.676205,27.404285 26.420246,-4.915047 v 19.11327 L 30.676205,36.853802 Z"
+       style="fill:#e9e9ff;fill-rule:evenodd;stroke:none;stroke-width:3.85839;stroke-linejoin:round;stroke-opacity:1"
+       id="path870"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
-       d="M 1.9094612,6.1136205 8.1493597,-0.05084948 13.543173,5.4805181 6.6956853,6.7543792 Z"
-       style="fill:#4d4d9f;fill-rule:evenodd;stroke:none;stroke-linejoin:round"
-       id="path872" />
+       d="M 12.209109,24.931991 36.28504,1.14709 57.096451,22.489238 30.676205,27.404285 Z"
+       style="fill:#4d4d9f;fill-rule:evenodd;stroke:none;stroke-width:3.85839;stroke-linejoin:round;stroke-opacity:1"
+       id="path872"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
-       d="M 1.9094612,6.1136205 8.1493597,-0.05084948 V 15.778384 L 1.9094612,9.8225385 Z"
-       style="fill:#8686bf;fill-rule:evenodd;stroke:none;stroke-linejoin:round"
-       id="path876" />
+       d="M 12.209109,24.931991 36.28504,1.14709 V 62.222373 L 12.209109,39.242426 Z"
+       style="fill:#8686bf;fill-rule:evenodd;stroke:none;stroke-width:3.85839;stroke-linejoin:round;stroke-opacity:1"
+       id="path876"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
   </g>
 </svg>
