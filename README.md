@@ -1,4 +1,4 @@
-![smushed-icon](addons/Smushgd/icon-large.png)
+![smushed-icon](addons/Smushgd/icon-big.png)
 # Smushgd
 
 ## Description
