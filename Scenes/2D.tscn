@@ -38,13 +38,13 @@ script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
+IS_DEBUG_SKELETON_OVERLAY = true
 CAST_SHADOW = true
 resolution = Vector2( 64, 64 )
 
 [node name="Scene Root" parent="Smushgd" instance=ExtResource( 5 )]
 
 [node name="Smushgd Attachment" type="Node2D" parent="Smushgd"]
-editor/display_folded = true
 script = ExtResource( 6 )
 __meta__ = {
 "_editor_icon": ExtResource( 7 )
